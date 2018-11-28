@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  example-api:
+    build:
+      context: "."
+    restart: always
+    environment:
+      - PORT
+      - SECRET
+      - NORM_ADAPTER=mysql
+      - NORM_MYSQL_HOST=mysql
+      - NORM_MYSQL_USER=example-api
+      - NORM_MYSQL_PASSWORD
+      - NORM_MYSQL_DATABASE=example-api
+    networks:
+      - backend
+
+networks:
+  backend:
+    external: true

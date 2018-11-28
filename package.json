@@ -1,0 +1,36 @@
+{
+  "name": "node-example-api",
+  "version": "0.1.0",
+  "description": "Node example API",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "nodemon server.js",
+    "migrate": "migrate",
+    "start": "node server.js",
+    "test": "mocha test/**"
+  },
+  "author": "Ganesha <reekoheek@gmail.com> (http://sagara.id)",
+  "license": "MIT",
+  "dependencies": {
+    "@xinix/migrate": "^1.0.2",
+    "bono": "^1.0.0",
+    "bono-norm": "^2.0.3",
+    "kcors": "^2.2.2",
+    "koa-jwt": "^3.5.1",
+    "node-norm": "^1.2.10",
+    "node-norm-mysql": "^1.2.4",
+    "norm-ddl": "^0.1.1",
+    "norm-ddl-mysql": "0.0.1",
+    "sprintf-js": "^1.1.1"
+  },
+  "devDependencies": {
+    "husky": "^1.1.2",
+    "supertest": "^3.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
+    }
+  }
+}

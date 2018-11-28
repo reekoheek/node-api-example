@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const jsonwebtoken = require('jsonwebtoken');
+const { secret } = require('../config');
+
+let username = process.argv[2] || 'cli';
+
+let token = jsonwebtoken.sign({
+  sub: username,
+}, secret);
+
+console.info(token);
