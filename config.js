@@ -25,7 +25,7 @@ switch (NORM_ADAPTER) {
   case 'disk':
   default:
     connection.adapter = require('node-norm/adapters/disk');
-    connection.file = `${process.env.NORM_DISK_DIR || '.tmp'}/db.json`;
+    connection.file = `${process.env.NORM_DISK_DIR || path.join(__dirname, '.tmp')}/db.json`;
 }
 
 let config = {

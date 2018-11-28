@@ -10,6 +10,7 @@ module.exports = class Api extends Bundle {
     this.use(require('kcors')());
     this.use(require('bono/middlewares/json')());
     this.use(require('koa-jwt')({ secret }));
+    this.use(require('bono-norm/middleware')({ manager }));
 
     this.bundle('/example', new NormBundle({ schema: 'example' }));
 
